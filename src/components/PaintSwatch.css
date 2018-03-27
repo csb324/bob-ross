@@ -1,0 +1,49 @@
+.palette {
+  padding: 1em 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.paint-swatch {
+  flex: 1 0 150px;
+  border: 1px solid #eeeeee;
+  margin: 1em;
+}
+
+.paint-swatch__select {
+  text-decoration: none;
+  display: block;
+  padding: 2em 0.5em;
+  text-align: center;
+  background-color: #ebebeb;
+  color: #333333;
+}
+
+.paint-swatch__details {
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+.paint-swatch__name {
+  font-weight: bold;
+}
+
+
+.color-input__edit {
+  cursor: pointer;
+  font-size: 0.8em;
+}
+.color-input__popover {
+  position: absolute;
+  z-index: 2;
+}
+.color-input__cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
