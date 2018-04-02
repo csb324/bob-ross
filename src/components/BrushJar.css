@@ -1,0 +1,25 @@
+.brush-jar {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eeeeee;
+}
+
+.brush-jar__button, .brush-jar__label {
+  padding: 0.5em;
+}
+.brush-jar__label {
+  background-color: #e0e0e0;
+  display: block;
+  
+}
+.brush-jar__button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  background-color: #333333;
+  margin-right: 0.25em;
+  width: 1em;
+  font-weight: bold;
+  color: #ffffff;
+}

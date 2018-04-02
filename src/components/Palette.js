@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import PaintSwatch from './PaintSwatch';
+import paintType from '../types/PaintType';
 
 class Palette extends Component {
 
   props: {
     paints: { 
-      [string]: {
-        count: number,
-        currentCount: number,
-        color: string
-      } 
+      [string]: paintType
     },
     changeColor: (string, string) => void,
     setSelectedColor: (string) => void
@@ -33,7 +30,11 @@ class Palette extends Component {
       }
 
       return (
-        <PaintSwatch key={n} dataPoint={n} changeColor={changeThisColor} selectColor={selectThisColor} {...paints[n]} />
+        <PaintSwatch 
+          key={n} 
+          dataPoint={n} 
+          changeColor={changeThisColor} 
+          selectColor={selectThisColor} {...paints[n]} />
       )
 
     })
