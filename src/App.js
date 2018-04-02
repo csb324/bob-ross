@@ -103,6 +103,11 @@ class App extends Component<void, stateShape> {
     return this.state.paints[this.state.currentPaint];
   }
 
+  saveStatus(): void {
+    localStorage.setItem('bobross-paints', JSON.stringify(this.state.paints));
+    localStorage.setItem('bobross-pixels', JSON.stringify(this.state.pixels));
+  }
+
   render() {
     return (
       <div className="App">
@@ -120,7 +125,8 @@ class App extends Component<void, stateShape> {
             updateBrushSize={this.updateBrushSize.bind(this)}
             brushSize={this.state.brushSize}
             currentPaint={this.currentPaint()}
-            changeColor={this.changeColor.bind(this)} 
+            changeColor={this.changeColor.bind(this)}
+            saveStatus={this.saveStatus.bind(this)} 
           />
         </div>
 

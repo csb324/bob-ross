@@ -2,6 +2,12 @@ import type { pixelType } from '../types/PixelType';
 import { HEIGHT, WIDTH } from '../constants';
 
 function createPixels(): pixelType[] {
+  const localStoragePixels = localStorage.getItem(`bobross-pixels`);
+
+  if (localStoragePixels) {
+    const newPixels = JSON.parse(localStoragePixels);
+    return newPixels; // stop before fetch happens!
+  }
 
   const pixels = [];
 

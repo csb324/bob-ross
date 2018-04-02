@@ -11,6 +11,12 @@ type unfinishedPaint = {
 
 function createPaints(): paletteType {
 
+  const localStoragePaints = localStorage.getItem(`bobross-paints`);
+  if (localStoragePaints) {
+    const newPaints = JSON.parse(localStoragePaints);
+    return newPaints; // stop before fetch happens!
+  }
+
   const paints: { [string]: unfinishedPaint } = {
     ERASE: { count: 3220, color: "#ffffff", currentCount: 3220 },
     APPLE_FRAME: { count: 0, color: "#BBFFFF" },

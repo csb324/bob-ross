@@ -25,7 +25,10 @@
   text-align: center;
   background-color: #333333;
   margin-right: 0.25em;
-  width: 1em;
+  min-width: 1em;
   font-weight: bold;
   color: #ffffff;
+}
+.brush-jar__button--save {
+  margin: 0;
 }

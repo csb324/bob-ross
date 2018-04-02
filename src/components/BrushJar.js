@@ -9,7 +9,8 @@ class BrushJar extends Component<{
     updateBrushSize: (difference: number) => void,
     brushSize: number,
     changeColor: (colorKey: string, newValue: string) => void,
-    currentPaint: paintType
+    currentPaint: paintType,
+    saveStatus: () => void
   }> {
 
   increaseBrushSize() {
@@ -43,7 +44,7 @@ class BrushJar extends Component<{
 
         </div>
         <span className="brush-jar__label">brush size: {this.props.brushSize}</span>
-
+        <a className="brush-jar__button brush-jar__button--save" onClick={this.props.saveStatus}>Save</a>
 
       </div>
     )
