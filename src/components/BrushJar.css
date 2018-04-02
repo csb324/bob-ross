@@ -4,6 +4,12 @@
   justify-content: space-between;
   background-color: #eeeeee;
 }
+.brush-jar .paint-swatch {
+  flex: 1 0 auto;
+}
+.brush-jar__current-paint {
+  flex: 1;
+}
 
 .brush-jar__button, .brush-jar__label {
   padding: 0.5em;

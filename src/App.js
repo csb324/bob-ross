@@ -5,7 +5,6 @@ import './App.css';
 import Palette from './components/Palette';
 import Paper from './components/Paper';
 import BrushJar from './components/BrushJar';
-import { HEIGHT, WIDTH } from './constants';
 import createPaints from './util/createPaints';
 import createPixels from './util/createPixels';
 import type { paintType, paletteType } from './types/PaintType';

@@ -13,9 +13,9 @@ class PaintSwatch extends Component {
     selectColor: () => void,
     changeColor: (string) => void,
     color: string,
-    dataPoint: string,
     count: number,
-    currentCount?: number
+    paintName: string,
+    currentCount: number
   }
 
   labelColor() {
@@ -31,30 +31,23 @@ class PaintSwatch extends Component {
   }
 
   remaining() {
-    if (this.props.currentCount) {
-      return (this.props.count - this.props.currentCount);
-    } else {
-      return this.props.count;
-    }
+    return (this.props.count - this.props.currentCount);
   }
 
   isAvailable() {
     return (this.remaining() > 0);
   }
 
-  
   render() {
     return (
-      <div className="paint-swatch">
+      <div className="paint-swatch" style={{ backgroundColor: this.props.color, color: this.labelColor() }}>
 
-        <a href="#" className="paint-swatch__select" style={{ backgroundColor: this.props.color, color: this.labelColor() }} onClick={this.props.selectColor}>
-          <div className="paint-swatch__count"> {this.remaining()} / {this.props.count} </div>          
+        <a href="#" className="paint-swatch__select" style={{ color: this.labelColor() }} onClick={this.props.selectColor}>
+          <div className="paint-swatch__count"> {this.remaining()} / {this.props.count} </div>     
+          <div className="paint-swatch__name">{this.props.paintName.toLowerCase().split("_").join(" ")}</div>     
         </a>
+        <ColorInput color={this.props.color} updateColor={this.props.changeColor} />
 
-        <div className="paint-swatch__details">
-          <div className="paint-swatch__name">{this.props.dataPoint.toLowerCase().split("_").join(" ")}</div>
-          <ColorInput color={this.props.color} updateColor={this.props.changeColor} />
-        </div>
       </div>
     );
   }

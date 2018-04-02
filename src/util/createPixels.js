@@ -1,4 +1,5 @@
 import type { pixelType } from '../types/PixelType';
+import { HEIGHT, WIDTH } from '../constants';
 
 function createPixels(): pixelType[] {
 

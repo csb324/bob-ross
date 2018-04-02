@@ -1,5 +1,5 @@
 .palette {
-  padding: 1em 2em;
+  padding: 0 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -8,18 +8,20 @@
 }
 
 .paint-swatch {
+  position: relative;
+}
+
+.palette .paint-swatch {
   flex: 1 0 150px;
   border: 1px solid #eeeeee;
-  margin: 1em;
+  margin: 0.25em;
 }
 
 .paint-swatch__select {
   text-decoration: none;
   display: block;
-  padding: 2em 0.5em;
+  padding: 0.5em;
   text-align: center;
-  background-color: #ebebeb;
-  color: #333333;
 }
 
 .paint-swatch__details {
@@ -27,15 +29,33 @@
   display: flex;
   justify-content: space-between;
 }
-.paint-swatch__name {
-  font-weight: bold;
-}
-
 
 .color-input__edit {
   cursor: pointer;
-  font-size: 0.8em;
+  right: 0;
+  border: 1px solid #ffffff;
 }
+
+.paint-swatch__count {
+  left: 0.25em;
+}
+.paint-swatch__count, .color-input__edit, .paint-swatch__name {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.paint-swatch__count, .color-input__edit {
+  opacity: 0.5;
+  position: absolute;
+  padding: 0.25em;
+  top: 0;
+}
+
+.paint-swatch__name {
+  margin-top: 1.5em;
+  text-align: left;
+}
+
 .color-input__popover {
   position: absolute;
   z-index: 2;
