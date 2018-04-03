@@ -23,7 +23,7 @@ class App extends Component<void, stateShape> {
   constructor() {
     super();
     this.state = {
-      currentPaint: 'APPLE_FRAME',
+      currentPaint: 'ERASE',
       paints: createPaints(),
       pixels: createPixels(),
       brushSize: 1
@@ -108,6 +108,10 @@ class App extends Component<void, stateShape> {
     localStorage.setItem('bobross-pixels', JSON.stringify(this.state.pixels));
   }
 
+  resetCanvas(): void {
+    this.setState({ pixels: createPixels(), paints: createPaints() });
+  }
+
   render() {
     return (
       <div className="App">
@@ -126,7 +130,8 @@ class App extends Component<void, stateShape> {
             brushSize={this.state.brushSize}
             currentPaint={this.currentPaint()}
             changeColor={this.changeColor.bind(this)}
-            saveStatus={this.saveStatus.bind(this)} 
+            saveStatus={this.saveStatus.bind(this)}
+            resetCanvas={this.resetCanvas.bind(this)}
           />
         </div>
 

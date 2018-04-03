@@ -32,7 +32,6 @@ class Palette extends Component {
       return (
         <PaintSwatch 
           key={n} 
-          dataPoint={n} 
           changeColor={changeThisColor} 
           selectColor={selectThisColor} {...paints[n]} />
       )

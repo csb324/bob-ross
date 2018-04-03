@@ -6,11 +6,12 @@ import PaintSwatch from './PaintSwatch';
 import type { paintType } from '../types/PaintType';
 
 class BrushJar extends Component<{
-    updateBrushSize: (difference: number) => void,
-    brushSize: number,
-    changeColor: (colorKey: string, newValue: string) => void,
     currentPaint: paintType,
-    saveStatus: () => void
+    brushSize: number,
+    updateBrushSize: (difference: number) => void,
+    changeColor: (colorKey: string, newValue: string) => void,
+    saveStatus: () => void,
+    resetCanvas: () => void
   }> {
 
   increaseBrushSize() {
@@ -37,7 +38,6 @@ class BrushJar extends Component<{
         <div className="brush-jar__current-paint">
 
           <PaintSwatch 
-            dataPoint={this.props.currentPaint.paintName} 
             changeColor={this.changeColor().bind(this)} 
             selectColor={() => { return }}
             {...this.props.currentPaint} />
@@ -45,6 +45,7 @@ class BrushJar extends Component<{
         </div>
         <span className="brush-jar__label">brush size: {this.props.brushSize}</span>
         <a className="brush-jar__button brush-jar__button--save" onClick={this.props.saveStatus}>Save</a>
+        <a className="brush-jar__button brush-jar__button--reset" onClick={this.props.resetCanvas}>Reset</a>
 
       </div>
     )
